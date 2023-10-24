@@ -1,5 +1,5 @@
 const inquirer = require('inquirer')
-const shapesjs = require('./lib/shapes')
+const shapes = require('./lib/shapes')
 const fs = require('fs')
 
 
@@ -18,7 +18,7 @@ const questions = [
         type: 'list',
         name: 'shape',
         message: 'Select thee shape you want your logo to be: ',
-        choice: ['circle', 'triangle', 'square']
+        choices: ['circle', 'triangle', 'square']
     },
     {
         type: 'input',
