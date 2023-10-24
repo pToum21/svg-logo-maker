@@ -28,3 +28,14 @@ const questions = [
 
 ]
 
+const application = () => {
+    inquirer.prompt(questions).then(answers => {
+        try {
+            fs.writeFileSync("examples/logo.svg", shapes(answers))
+            console.log("Generated logo.svg")
+        } catch (error) {
+            console.log(error.message)
+        }
+    })
+}
+application();
