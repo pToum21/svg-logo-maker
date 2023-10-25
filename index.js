@@ -32,7 +32,6 @@ const questions = [
 const application = () => {
     inquirer.prompt(questions).then(answers => {
         console.log(answers)
-        // write an if satment for what shape they picked 
         let shape;
         if (answers.shapeChoice === 'square') {
             shape = new Square();
