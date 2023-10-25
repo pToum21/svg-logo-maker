@@ -29,8 +29,8 @@ you must install node using init -y and npm i to download all dependincies
 ## Test - 🧪
 You must run npm run start in the terminal to test the README.md generator.
 
-## Preview
-
+## Preview - 🎥
+https://drive.google.com/file/d/13et6W9Rb03q4JQG97na6ctFJyLgQhSvW/view?usp=sharing
 
 ## Qustions - ❓
 Feel Free to contact me at pey3moo3@gmail.com or [ptoum21](https://github.com/ptoum21).
