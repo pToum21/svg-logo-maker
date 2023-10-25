@@ -1,10 +1,7 @@
 const inquirer = require('inquirer')
-const shapes = require('./lib/shapes')
-const fs = require('fs')
-// const makeLogo = require('./lib/makelogo')
 const { Circle, Square, Triangle } = require("./lib/shapes")
-const SVG = require("./lib/svg")
-
+const fs = require('fs')
+let SVG = require('./lib/svg')
 
 
 const questions = [
@@ -34,30 +31,29 @@ const questions = [
 
 const application = () => {
     inquirer.prompt(questions).then(answers => {
-
+        console.log(answers)
         // write an if satment for what shape they picked 
-        const makeLogo = ({ text, textColor, shape, shapeColor}) => {
-            const svg = new SVG;
-        
-            if (shapeChoice === 'Square'){
-                shape = new Square();
-            } else if (shapeChoice === 'Triangle') {
-                shape = new Triangle();
-            }else {
-                shape = new Circle();
-            }
-            shape.setColor(shapeColor);
-            svg.setText(textColor, text);
-            svg.setShape(shape)
-        
-            return svg.render()
-            
+        let shape;
+        if (answers.shapeChoice === 'square') {
+            shape = new Square();
+        } else if (answers.shapeChoice === 'triangle') {
+            shape = new Triangle();
         }
-        fs.writeFileSync("examples/logo.svg", shapes(makeLogo))
-        console.log("Generated logo.svg")
+        else {
+            shape = new Circle();
+        }
+        shape.setColor(answers.shapeColor);
+        const svg = new SVG;
+        svg.setText(answers.textColor, answers.text);
+        svg.setShape(shape)
+        const logo = svg.render()
+        fs.writeFile('examples/logo.svg', logo, (err) => {
+            if (err) throw err;
+            console.log('The file has been saved!');
+        });
     }
-    ).catch(error=> {
-        console.log(error.message)
-    })
+    )
+
+
 }
-    application();
+application()
