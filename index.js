@@ -17,7 +17,7 @@ const questions = [
     },
     {
         type: 'list',
-        name: 'shape',
+        name: 'shapeChoice',
         message: 'Select thee shape you want your logo to be: ',
         choices: ['circle', 'triangle', 'square']
     },
