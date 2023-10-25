@@ -1,6 +1,7 @@
 const inquirer = require('inquirer')
 const shapes = require('./lib/shapes')
 const fs = require('fs')
+const makeLogo = require('./lib/makelogo')
 
 
 const questions = [
@@ -22,7 +23,7 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'logoColor',
+        name: 'shapeColor',
         message: 'Select a color you want your shape to be: '
     },
 
