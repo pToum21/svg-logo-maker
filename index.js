@@ -3,7 +3,7 @@ const { Circle, Square, Triangle } = require("./lib/shapes")
 const fs = require('fs')
 let SVG = require('./lib/svg')
 
-
+// inquirer questions
 const questions = [
     {
         type: 'input',
@@ -29,6 +29,7 @@ const questions = [
 
 ]
 
+// this allows the inquirer to write a file which is the svg file to the fs to give us the logo
 const application = () => {
     inquirer.prompt(questions).then(answers => {
         console.log(answers)
